@@ -1,80 +1,90 @@
-- **Test Coverage Status:**
-<br>
-<a href="https://codeclimate.com/github/techly-africa/Auth-x/maintainability"><img src="https://api.codeclimate.com/v1/badges/57e44b095a375161ea1c/maintainability" /></a>
-<a href='https://coveralls.io/github/techly-africa/Auth-x?branch=main'><img src='https://coveralls.io/repos/github/techly-africa/Auth-x/badge.svg?branch=main' alt='Coverage Status' /></a>
+# RBAC Module with MongoDB and Social Authentication
 
+This is a Nest.js project that implements a Role-Based Access Control (RBAC) module with MongoDB as the database. It also includes social authentication features for Facebook, Google, and GitHub.
 
+## Table of Contents
 
-# Role-Based Access Control Backend(Auth-X)
-
-This is a role-based access control backend for managing permissions and roles. It is built using NestJS and MongoDB as the database.
+- [RBAC Module with MongoDB and Social Authentication](#rbac-module-with-mongodb-and-social-authentication)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 
 ## Features
 
-- User authentication and authorization.
-- Role management.
-- Permission assignment and unassignment to roles.
-- Swagger API documentation.
+- **RBAC**: Implements a flexible role-based access control system to restrict access to routes and resources based on user roles and permissions.
+- **MongoDB Integration**: Utilizes MongoDB as the database for storing user data, roles, and permissions.
+- **Social Authentication**: Supports authentication via Facebook, Google, and GitHub OAuth providers.
+- **JWT Authentication**: Secures the application with JSON Web Tokens (JWT) for stateless authentication.
+- **Role Management**: Provides endpoints for creating, updating, and deleting roles and permissions.
+- **User Management**: Allows for creating, updating, and deleting user accounts, as well as assigning roles to users.
 
-## Technology Stack
+## Prerequisites
 
-- [NestJS](https://nestjs.com/): A progressive Node.js framework for building efficient and scalable server-side applications.
-- [MongoDB](https://www.mongodb.com/): A NoSQL database for storing application data.
+Before running the application, ensure that you have the following software installed:
 
-## Getting Started
+- Node.js (version 12 or later)
+- MongoDB (version 4 or later)
+
+## Installation
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/techly-africa/Auth-x.git
-   cd Auth-x
-   npm install
-   npm run start:dev
-   ```
+```bash
+git clone https://github.com/your-repo/rbac-module.git
+cd rbac-module
+npm install
 
-   The server will start on http://localhost:3000 by default.
+MONGODB_URI=mongodb://localhost:27017/rbac-module
+FACEBOOK_APP_ID=your-facebook-app-id
+FACEBOOK_APP_SECRET=your-facebook-app-secret
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+JWT_SECRET=your-jwt-secret
 
-## Swagger API Documentation
+npm run start:dev
 
-The API endpoints for this project are documented using Swagger. You can explore the API and test requests by visiting the Swagger documentation.
+This README file provides an overview of the project, its features, installation instructions, usage examples, contribution guidelines, and licensing information. You can customize it further to include any additional details or sections specific to your project.
 
-- **Swagger API Documentation:** [Auth-x Swagger Documentation](http://51.20.63.73/api)
 
-For detailed information on the available endpoints, request parameters, and response formats, please refer to the Swagger documentation.
 
-You can also access the Swagger documentation when the server is running at [http://localhost:3000/api](http://localhost:3000/api).
+src/
+├── auth/
+│   ├── auth.controller.ts
+│   ├── auth.module.ts
+│   ├── auth.service.ts
+│   ├── jwt.strategy.ts
+│   └── ...
+├── roles/
+│   ├── roles.controller.ts
+│   ├── roles.module.ts
+│   ├── roles.service.ts
+│   └── ...
+├── users/
+│   ├── users.controller.ts
+│   ├── users.module.ts
+│   ├── users.service.ts
+│   └── ...
+├── app.module.ts
+├── main.ts
+└── ...
 
-## Techly Africa
 
-This project is proudly developed and maintained by [Techly Africa](https://www.techlyafrica.com/).
+This README file covers the following sections:
 
-For inquiries, support, or business opportunities, please don't hesitate to get in touch with us.
+- Features
+- Prerequisites
+- Installation
+- Configuration
+- Running the Application
+- API Documentation
+- Project Structure
+- Contributing
+- License
 
-- Website: [Techly Africa](https://www.techlyafrica.com/)
-- Email: copain@techly.africa
+It provides detailed information about the project, its features, installation instructions, configuration settings, project structure, and contribution guidelines. You can further customize this README file based on your specific project requirements or add any additional sections as needed.
 
-Techly Africa is a technology company dedicated to providing innovative solutions and services to empower businesses and organizations. We specialize in creating cutting-edge software applications, web solutions, and digital experiences.
 
-If you'd like to learn more about our work or discuss potential collaborations, please reach out to us through the provided contact information.
 
-## Test Coverage with Coveralls
-
-We use Coveralls to track and display test coverage for this project. Test coverage is an essential metric for understanding the quality and reliability of the codebase.
-
-## Contributors
-
-We want to express our gratitude to the following contributors for their valuable contributions to this project:
-
-- [Terence Faid JABO](https://github.com/faid-terence)
-- [Etienne KAGABA](https://github.com/kagaba-etienne)
-- [Edwin NAMBAJE](https://github.com/edwinnambaje)
-
-Your contributions have played a significant role in making this project successful. We appreciate your hard work and dedication.
-
-If you'd like to contribute to this project, please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
-Thank you for being a part of this project!
-
-## License
-
-This project is open-source and available under the [Techly License](LICENSE).
